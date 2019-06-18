@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="msg_no_busStops">#999</color>
+    <color name="hint_enter_busstop">#89c3c3c3</color>
+    <color name="timestamp">#858585</color>
+    <color name="bus_stop_list_text">#232323</color>
+</resources>
