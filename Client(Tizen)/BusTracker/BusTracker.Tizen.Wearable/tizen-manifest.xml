@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest package="bg.sasho.BusTracker.Tizen.Wearable" version="1.0.0" api-version="4" xmlns="http://tizen.org/ns/packages">
+    <author email="me@sasho.bg" href="https://sasho.bg">Alexander Yordanov</author>
+    <description></description>
+    <profile name="wearable" />
+    <ui-application appid="bg.sasho.BusTracker.Tizen.Wearable" exec="BusTracker.Tizen.Wearable.dll" multiple="false" nodisplay="false" taskmanage="true" type="dotnet" launch_mode="single">
+        <label>BusTracker</label>
+        <icon>bustracker.png</icon>
+        <metadata key="http://tizen.org/metadata/prefer_dotnet_aot" value="true" />
+        <metadata key="accessory-services-location" value="/res/xml/accessoryservices.xml" />
+        <splash-screens />
+    </ui-application>
+    <shortcut-list />
+    <privileges>
+        <privilege>http://developer.samsung.com/tizen/privilege/accessoryprotocol</privilege>
+    </privileges>
+    <provides-appdefined-privileges />
+</manifest>

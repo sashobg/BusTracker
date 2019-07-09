@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<cui:CirclePage xmlns="http://xamarin.com/schemas/2014/forms"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:cui ="clr-namespace:Tizen.Wearable.CircularUI.Forms;assembly=Tizen.Wearable.CircularUI.Forms"
+                x:Class="BusTracker.MainPage"
+                RotaryFocusObject="{x:Reference listView}"
+                NavigationPage.HasNavigationBar="false">
+    <cui:CirclePage.Content>
+        <cui:CircleListView x:Name="listView" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+            <cui:CircleListView.Header>
+                <x:String>BusTracker</x:String>
+            </cui:CircleListView.Header>
+            <cui:CircleListView.HeaderTemplate>
+                <DataTemplate>
+                    <Label Text="{Binding .}" FontAttributes="Bold" TextColor="Aqua" FontSize="12" HorizontalTextAlignment="Center"/>
+                </DataTemplate>
+            </cui:CircleListView.HeaderTemplate>
+            <cui:CircleListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding .}"/>
+                </DataTemplate>
+            </cui:CircleListView.ItemTemplate>
+            <cui:CircleListView.ItemsSource>
+                <x:Array Type="{x:Type x:String}" x:Key="array">
+                    <x:String>Connect</x:String>
+                    <x:String>Favourites</x:String>
+                    <x:String>Close</x:String>
+                </x:Array>
+            </cui:CircleListView.ItemsSource>
+        </cui:CircleListView>
+    </cui:CirclePage.Content>
+</cui:CirclePage>

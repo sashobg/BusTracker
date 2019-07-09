@@ -1,0 +1,61 @@
+﻿<cui:CirclePage
+    x:Class="BusTracker.StopDetailsPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:cui="clr-namespace:Tizen.Wearable.CircularUI.Forms;assembly=Tizen.Wearable.CircularUI.Forms"
+    xmlns:models="clr-namespace:BusTracker.Models;assembly=BusTracker"
+    RotaryFocusObject="{x:Reference stopDetailsView}"
+    NavigationPage.HasNavigationBar="false">
+    <cui:CirclePage.Content>
+        <cui:CircleListView x:Name="stopDetailsView" ItemsSource="{Binding lines}">
+            <cui:CircleListView.ItemTemplate>
+                <DataTemplate>                
+                    <ViewCell>
+                        <StackLayout
+                            Padding="40,0,10,0"
+                            HeightRequest="150"
+                            HorizontalOptions="CenterAndExpand"
+                            Orientation="Horizontal"
+                            VerticalOptions="FillAndExpand"
+                            WidthRequest="360">
+                            <Label
+                             
+                                FontSize="12"
+                                HorizontalOptions="Center"
+                                HorizontalTextAlignment="Center"
+                                Text="{Binding name}"
+                                BackgroundColor="{Binding colorText}"
+                                VerticalOptions="Center"
+                                VerticalTextAlignment="Center" />
+                            <Image
+                                HorizontalOptions="Center"
+                                Source="{Binding vehicleType, StringFormat='{0}.png'}"
+                                VerticalOptions="Center" />
+                            <StackLayout
+                             
+                                HorizontalOptions="CenterAndExpand"
+                                Orientation="Vertical"
+                                VerticalOptions="Center">
+                                <Label
+                                    FontSize="10"
+                                    HorizontalOptions="End"
+                                    HorizontalTextAlignment="Center"
+                                    Text="{Binding allArrivals}"
+                                    VerticalOptions="Center"
+                                    VerticalTextAlignment="Center" />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+
+            </cui:CircleListView.ItemTemplate>
+        </cui:CircleListView>
+    </cui:CirclePage.Content>
+    <cui:ActionButtonItem.BindingContext>
+        <models:ClockViewModel />
+    </cui:ActionButtonItem.BindingContext>
+    <cui:CirclePage.ActionButton>
+        <cui:ActionButtonItem Text="{Binding DateTime, StringFormat='{0:HH:mm:ss}'}" />
+    </cui:CirclePage.ActionButton>
+
+</cui:CirclePage>
